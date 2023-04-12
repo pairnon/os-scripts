@@ -1,5 +1,6 @@
 #!/bin/bash
 
+pacman -Syy
 pacman -S screen vim vi nano htop neofetch
 
 pacman -S git base-devel
