@@ -28,11 +28,11 @@ while [ "$valid" = false ]; do
 done
 
 # Install CLI packages
-pacman -Syy
-pacman -S sudo screen vim vi nano htop neofetch
+sudo pacman -Syy
+sudo pacman -S screen vim vi nano htop neofetch
 
 # Install yay
-pacman -S git base-devel
+sudo pacman -S git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
