@@ -1,8 +1,11 @@
 #!/bin/bash
 
 # Check if script is being run as root
+echo "Checking if root..."
 if [[ $EUID -ne 0 ]]; then
-	echo "This script must be run as root"
+	echo "Not root; continuing"
+else
+	echo "This script cannot be run as root"
 	exit 1
 fi
 
