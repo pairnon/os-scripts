@@ -2,8 +2,8 @@
 
 # Check if script is being run as root
 if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root"
-   exit 1
+	echo "This script must be run as root"
+	exit 1
 fi
 
 # Ask for the desired username
@@ -19,7 +19,7 @@ passwd "$username"
 pacman -Syy
 pacman -S sudo
 
-# Add the new user to the sudoers file
+# Allow members of wheel to execute any command
 sed -i 's/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/g' /etc/sudoers
 
 # Switch to the new user
