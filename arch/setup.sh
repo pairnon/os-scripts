@@ -33,3 +33,7 @@ pacman -S git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
+
+# Install GUI packages if necessary
+if [ "$gui_packages" == true ]; then
+	yay -S chromium google-chrome visual-studio-code-bin
