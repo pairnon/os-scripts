@@ -40,3 +40,6 @@ makepkg -si
 # Install GUI packages if necessary
 if [ "$gui_packages" == true ]; then
 	yay -S chromium google-chrome visual-studio-code-bin
+
+# End of script
+exit 0
