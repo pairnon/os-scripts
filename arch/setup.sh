@@ -29,7 +29,7 @@ done
 
 # Install CLI packages
 sudo pacman -Syy
-sudo pacman -S screen vim vi nano htop neofetch
+sudo pacman -S screen vim vi nano htop neofetch pacman-contrib
 
 # Install yay
 sudo pacman -S git base-devel
