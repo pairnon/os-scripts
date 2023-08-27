@@ -1,3 +1,3 @@
 # os-scripts
 ## Info
-Automated scripts for new installs
+Personal automated scripts for new installs
