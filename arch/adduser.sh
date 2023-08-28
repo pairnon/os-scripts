@@ -7,10 +7,30 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Ask for the desired username
-read -p "Enter the username you want to add as root: " username
+read -p "Enter the username you want to add: " username
 
-# Create the new user with the given username
-useradd -m -G wheel "$username"
+valid=false
+sudo=false
+echo "Should $username have sudo privileges? [y/N] "
+read choice
+
+while [ valid == false]; do
+	if [ "$choice" == "y" ]; then
+		sudo=true
+		valid=true
+	elif [ "$choice" == "" ]; then
+		valid=true
+	else
+		echo "Invalid choice. Please enter y or n."
+	fi
+done
+
+# Create the new sudo/reg user with the given username and choice
+if [ sudo == true ]; then
+	useradd -m -G wheel "$username"
+else
+	useradd -m "$username"
+fi
 
 # Set a password for the new user
 passwd "$username"
