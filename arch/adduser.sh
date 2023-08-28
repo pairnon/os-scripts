@@ -14,7 +14,7 @@ sudo=false
 echo "Should $username have sudo privileges? [y/N] "
 read choice
 
-while [ "$valid" == false]; do
+while [ "$valid" = false]; do
 	if [ "$choice" == "y" ]; then
 		sudo=true
 		valid=true
