@@ -18,6 +18,8 @@ while [ "$valid" = false ]; do
 	if [ "$choice" == "y" ]; then
 		sudo=true
 		valid=true
+	elif [ "$choice" == "n" ]; then
+		valid=true
 	elif [ "$choice" == "" ]; then
 		valid=true
 	else
