@@ -11,10 +11,10 @@ read -p "Enter the username you want to add: " username
 
 valid=false
 sudo=false
-echo "Should $username have sudo privileges? [y/N] "
-read choice
 
 while [ "$valid" = false ]; do
+	echo "Should $username have sudo privileges? [y/N] "
+	read choice
 	if [ "$choice" == "y" ]; then
 		sudo=true
 		valid=true
