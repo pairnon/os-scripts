@@ -27,6 +27,24 @@ while [ "$valid" = false ]; do
 	fi
 done
 
+# Prompt for additional packages
+valid=false
+add_packages=false
+while [ "$valid" = false ]; do
+	echo "Install additional packages? [y/N] "
+	read choice
+	if [ "$choice" == "y" ]; then
+		add_packages=true
+		valid=true
+	elif [ "$choice" == "n" ]; then	
+		valid=true
+	elif [ "$choice" == "" ]; then
+		valid=true
+	else
+		echo "Invalid choice. Please enter y or n."
+	fi
+done
+
 # Install CLI packages
 sudo pacman -Syy
 sudo pacman -S screen vim vi nano htop neofetch pacman-contrib
@@ -36,6 +54,11 @@ sudo pacman -S git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
+
+# Install additional packages if necessary
+if [ "$add_packages" == true ]; then
+	pacman -S hydra nmap arp-scan john kismet hping wireshark-cli
+fi
 
 # Install GUI packages if necessary
 if [ "$gui_packages" == true ]; then
