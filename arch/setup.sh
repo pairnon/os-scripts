@@ -39,7 +39,7 @@ makepkg -si
 
 # Install GUI packages if necessary
 if [ "$gui_packages" == true ]; then
-	yay -S chromium librewolf-bin visual-studio-code-bin
+	yay -S chromium librewolf-bin visual-studio-code-bin keepassxc
 fi
 
 # End of script
