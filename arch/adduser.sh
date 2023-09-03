@@ -28,6 +28,7 @@ done
 # Create the new sudo/reg user with the given username and choice
 if [ sudo == true ]; then
 	useradd -m -G wheel "$username"
+	usermod -aG wheel "$username"
 else
 	useradd -m "$username"
 fi
