@@ -57,7 +57,7 @@ makepkg -si
 
 # Install additional packages if necessary
 if [ "$add_packages" == true ]; then
-	pacman -S hydra nmap arp-scan john kismet hping wireshark-cli
+	sudo pacman -S hydra nmap arp-scan john kismet hping wireshark-cli
 fi
 
 # Install GUI packages if necessary
