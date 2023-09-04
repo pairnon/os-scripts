@@ -6,4 +6,4 @@ sudo apt upgrade
 sudo apt install nala
 
 # Install CLI packages
-sudo nala install screen vim vi nano htop neofetch
+sudo nala install screen vim nano htop neofetch
