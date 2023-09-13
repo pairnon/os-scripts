@@ -45,6 +45,24 @@ while [ "$valid" = false ]; do
 	fi
 done
 
+# Prompt for Android Tools
+valid=false
+android_tools=false
+while [ "$valid" = false ]; do
+	echo "Install Android Tools (ADB)? [y/N] "
+	read choice
+	if [ "$choice" == "y" ]; then
+		android_tools=true
+		valid=true
+	elif [ "$choice" == "n" ]; then	
+		valid=true
+	elif [ "$choice" == "" ]; then
+		valid=true
+	else
+		echo "Invalid choice. Please enter y or n."
+	fi
+done
+
 # Install CLI packages
 sudo pacman -Syy
 sudo pacman -S screen vim vi nano htop neofetch pacman-contrib
@@ -63,6 +81,11 @@ fi
 # Install GUI packages if necessary
 if [ "$gui_packages" == true ]; then
 	yay -S chromium librewolf-bin visual-studio-code-bin keepassxc
+fi
+
+# Install Android Tools if necessary
+if [ "$android_tools" == true ]; then
+	yay -S android-tools
 fi
 
 # End of script
